@@ -33,28 +33,6 @@ class LineaNegocio(models.Model):
     def __str__(self):
         return self.nombre
     
-class VentaMaterial(models.Model):
-    nombre = models.CharField(max_length=60)
-    tipo = models.CharField(max_length=12)
-    valor = models.FloatField()
-
-    class Meta:
-        verbose_name='Venta de material didactico'
-
-    def __str__(self):
-        return self.nombre
-    
-class VentaMaterial(models.Model):
-    nombre = models.CharField(max_length=60)
-    tipo = models.CharField(max_length=12)
-    valor = models.FloatField()
-
-    class Meta:
-        verbose_name='Venta de material didactico'
-
-    def __str__(self):
-        return self.nombre
-    
 class EmisionCertificado(models.Model):
     certificado = models.CharField(max_length=150)
     fecha = models.DateField(auto_now=True)
@@ -70,7 +48,6 @@ class ObjetoNegocio(models.Model):
     nombre = models.CharField(max_length=60)
     tipo = models.CharField(max_length=60)
     certificado = models.ForeignKey(EmisionCertificado, on_delete=models.CASCADE)
-    material = models.ForeignKey(VentaMaterial, on_delete=models.CASCADE)
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
 
     class Meta:

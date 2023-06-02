@@ -27,10 +27,6 @@ class objetoAdmin(admin.ModelAdmin):
 
 admin.site.register(ObjetoNegocio, objetoAdmin)
 
-class materialAdmin(admin.ModelAdmin):
-    pass
-
-admin.site.register(VentaMaterial, materialAdmin)
 
 class certificadoAdmin(admin.ModelAdmin):
     pass

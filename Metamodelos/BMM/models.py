@@ -6,7 +6,7 @@ from django.db import models
 
 class Mision(models.Model):
     nombre=models.CharField(max_length=60)
-    descripcion=models.CharField(max_length=400)
+    descripcion=models.TextField(max_length=1400)
 
     class Meta:
         verbose_name='Mision'
@@ -17,7 +17,7 @@ class Mision(models.Model):
     
 class Vision(models.Model):
     nombre=models.CharField(max_length=60)
-    descripcion=models.CharField(max_length=400)
+    descripcion=models.TextField(max_length=1400)
     mision = models.ForeignKey(Mision, on_delete=models.CASCADE)
 
     class Meta:
@@ -29,7 +29,7 @@ class Vision(models.Model):
     
 class Estrategia(models.Model):
     nombre=models.CharField(max_length=60)
-    descripcion=models.CharField(max_length=400)
+    descripcion=models.TextField(max_length=1400)
     mision = models.ForeignKey(Mision, on_delete=models.CASCADE)
 
     class Meta:
@@ -41,7 +41,7 @@ class Estrategia(models.Model):
     
 class Tactica(models.Model):
     nombre=models.CharField(max_length=60)
-    descripcion=models.CharField(max_length=400)
+    descripcion=models.TextField(max_length=1400)
     estrategia = models.ForeignKey(Estrategia, on_delete=models.CASCADE)
 
     class Meta:
@@ -54,7 +54,7 @@ class Tactica(models.Model):
     
 class Objetivo(models.Model):
     nombre=models.CharField(max_length=60)
-    descripcion=models.CharField(max_length=400)
+    descripcion=models.TextField(max_length=1400)
     estrategia = models.ForeignKey(Estrategia, on_delete=models.CASCADE)
     vision = models.ForeignKey(Vision, on_delete=models.CASCADE)
 
@@ -67,7 +67,7 @@ class Objetivo(models.Model):
     
 class Meta(models.Model):
     nombre=models.CharField(max_length=60)
-    descripcion=models.CharField(max_length=400)
+    descripcion=models.TextField(max_length=1400)
     tactica = models.ForeignKey(Tactica, on_delete=models.CASCADE)
     objetivo = models.ForeignKey(Objetivo, on_delete=models.CASCADE)
 

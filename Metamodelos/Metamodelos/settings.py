@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ontologico',
     'BMM',
     'servicios',
+    'estructura',
 ]
 
 MIDDLEWARE = [
